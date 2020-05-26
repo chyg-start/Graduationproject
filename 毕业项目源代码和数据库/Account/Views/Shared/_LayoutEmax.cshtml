@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>在线考试 - 老师登录</title>
+
+    <link href="~/Content/bootstrap.css" rel="stylesheet" />
+    <!--导入项目所需的样式文件-->
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/global.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+</head>
+@using Account.Models
+
+<body>
+    <div id="all">
+        <!--页眉-->
+        <!--未登录-->
+        <div id="header">
+            <div id="logo"><span id="logotxt">在线全自动考试</span></div>
+            <div id="loginmsg">
+                @if (Session["user"] != null && Session["name"] != null)
+                {
+                    string name = Session["name"].ToString();
+                    <span> @name 您好, 欢迎光临在线全自动考试系统</span>
+                    <a href="/Logins/Logout">退出系统</a>
+                }
+                else
+                {
+                    <a href="/Logins/LoginTeacher">老师登录</a>
+                    <a href="/Logins/LoginStudent">学生登录</a>
+                }
+
+
+            </div>
+            <div style="clear:both;"></div>
+        </div>
+        <div id="menu">
+            <ul>
+                <li><a href="/Home/Index">首页</a></li>
+                <li>
+                    <a href="/Home/About">关于</a>
+                </li>
+                @if (Session["menus"] != null && Session["menus"].ToString() == "1")
+                {
+                    <li><a href="/Teacher/Index">教师管理</a></li>
+                    <li><a href="/Students/Index">学生管理</a></li>
+                    <li><a href="/Papers/Index">试卷管理</a></li>
+                    <li><a href="/Answers/Index">审卷</a></li>
+                }
+                else if (Session["menus"] != null && Session["menus"].ToString() == "2")
+                {
+                    Student stu = Session["user"] as Student;
+                    <li><a href="/Students/Details/" @stu.StuID>我的资料</a></li>
+                    <li><a href="/Papers1/IndexStu">在线考试</a></li>
+                    <li><a href="/Answers/MyAnswer?StuID=@stu.StuID">我的考试</a></li>
+
+                }
+                <div style="clear:both;"></div>
+            </ul>
+        </div>
+        <div id="content">
+            <!--页面内容部分-->
+            @RenderBody()
+
+            <!--页脚-->
+            <div id="footer">
+                <hr style="margin:20px 0px;" /> 在线全自动化考试   版权所有 - 2018
+            </div>
+        </div>
+    </div>
+    
+    @RenderSection("scripts", required: false)
+</body>
+</html>

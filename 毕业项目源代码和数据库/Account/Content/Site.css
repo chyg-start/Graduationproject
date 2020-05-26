@@ -1,0 +1,132 @@
+﻿/* 支架模版站点样式*/
+body {
+    font-size: 14px;
+}
+/* 表单基本样式*/
+
+fieldset {
+    border: 1px solid #ddd;
+}
+
+legend {
+    font-size: 3px;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+/*6.0版本*/
+.form-group{
+    overflow:hidden;
+    margin:3px;
+}
+.control-label{
+    display:block;
+    width:100px;
+    float:left;
+}
+.col-md-10 {
+    float: left;
+}
+.dl-horizontal {
+    overflow: hidden;
+    margin: 3px;
+}
+    .dl-horizontal dt {
+        width: 100px;
+        float: left;
+    }
+    .dl-horizontal dd {
+
+    }
+    /*6.0表单样式*/
+    .editor-label {
+        float: left;
+        width: 80px;
+        margin-bottom: 5px;
+    }
+
+.editor-field {
+    margin-bottom: 5px;
+}
+
+.display-label {
+    float: left;
+    width: 80px;
+}
+
+.display-field {
+}
+
+/* 验证信息基本样式*/
+.field-validation-error {
+    color: #f00;
+}
+
+.field-validation-valid {
+    color: #f00;
+}
+
+.input-validation-error {
+    border: 1px solid #f00;
+    background-color: #fee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #f00;
+}
+
+.validation-summary-valid {
+    color: #f00;
+}
+
+.input_button {
+    width: 80px;
+    height: 30px;
+    border: 1px solid #74cfd8;
+    background-color: #d8eff6;
+    text-align: center;
+}
+/*表格样式*/
+.table {
+    border: solid 1px #cbcbcb;
+    width: 99%;
+    margin: 5px 0px 0px 5px;
+    clear: both;
+}
+
+    .table th {
+        background: url(/images/th.gif) repeat-x;
+        height: 32px;
+        line-height: 32px;
+        border-bottom: solid 1px #b6cad2;
+        /*text-indent: 11px;*/
+        text-align: left;
+        padding: 0px 2px;
+    }
+
+    .table td {
+        line-height: 30px;
+        /*text-indent: 11px;*/
+        border-right: dotted 1px #c7c7c7;
+        padding: 0px 5px;
+    }
+
+    .table tbody tr.odd {
+        background: #f5f8fa;
+    }
+
+    .table tbody tr:hover {
+        background: #e5ebee;
+    }
+
+    input.form-control{
+        width:300px;
+        height:25px;
+    }
+.btn {
+    width: 100px;
+    height: 30px;
+}

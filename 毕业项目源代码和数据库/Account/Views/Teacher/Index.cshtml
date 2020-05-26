@@ -1,0 +1,97 @@
+﻿               
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutEmax.cshtml";
+}
+@using Account.Models
+@using PagedList.Mvc
+@model PagedList.IPagedList<Account.Models.Teacher>
+<h2>教师列表</h2>
+
+<p>
+    <a href="/Teacher/Create">添加新老师</a>
+    <a href="#" onclick="DelALL()">批量删除</a>
+
+</p>
+<table class="table">
+    <tr>
+        <th>
+           全选 <input id="CheckALL" type="checkbox" name="CheckALL" />
+        </th>
+        <th>
+            姓名
+        </th>
+        <th>
+            登录名
+        </th>
+        <th>
+            密码
+        </th>
+        <th>
+            电话
+        </th>
+        <th>
+            Email
+        </th>
+        <th>操作</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td><input id="TeacherID" type="checkbox" name="TeacherID" value="@item.TeacherID"/></td>
+    <td>@item.TeacherName</td>
+    <td>@item.TeacherLoginName</td>
+    <td>@item.TeacherLoginPwd</td>
+    <td>@item.TeacherPhone</td>
+    <td>@item.TeacherEmail</td>
+    <td>
+        <a href="/Teacher/Edit/@item.TeacherID">编辑</a>|
+        <a href="/Teacher/Details/@item.TeacherID">详情</a> |
+        <a href="/Teacher/Delete/@item.TeacherID" onclick="return confirm('您确认要删除 @item.TeacherName 的这个老师信息吗？')">删除</a>
+    </td>
+</tr>
+    }
+</table>
+@section scripts{
+    <script type="text/javascript">
+         /*全选的效果*/
+         $('input:checkbox[name="CheckALL"]').click(function(){
+         if($(this).is(':checked')){
+             $('input:checkbox').each(function(){
+            $(this).prop("checked",true);
+          });
+            }else{
+              $('input:checkbox').each(function(){
+              $(this).prop("checked",false);
+          });
+            }
+         });
+        //批量删除
+        function DelALL() {
+            var checkedNum = $("input[name=TeacherID]:checked").length;
+            if (checkedNum == 0) {
+                alert("至少选择一行");
+                return;
+            }
+            if (confirm("确定要删除所选项吗？")) {
+                var checkedList = new Array();
+                $("input[name=TeacherID]:checked").each(function () {
+                    checkedList.push($(this).val());
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "/Teacher/DelAll",
+                    data: { "dellist": checkedList.toString() },
+                    dataType: "text",
+                    success: function (data) {
+                        $("input[name=TeacherID]:checkbox").attr("checked", false);                 
+                        window.location.reload();
+                        alert(data);
+                    }
+
+
+                })
+            }
+        }
+    </script>
+ }

@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "AjaxLogins";
+    Layout = "~/Views/Shared/_LayoutEmax.cshtml";
+}
+
+<h2>学生登录</h2>
+<form action="/Logins/LoginStudent" method="post">
+    <input name="__RequestVerificationToken" type="hidden" value="ql6QOqOuYfkLE8YOkXyNCJxRKzdXcgAwke6SRBaufrBGJtWJEokxvFI7D89n41f7FKKKfz2jh0mDrKs-viV6y2xE0k87KkqahHWEHKKgCDQ1" />    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuLoginName">登录名</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="登录名是必填项" id="StuLoginName" name="StuLoginName" type="text" value="" onblur="Check()"/>
+                @Html.ValidationMessage("StuLoginName")
+                <span id="valitaLoginName"></span>
+            </div>
+        </div>
+        <div class="form-group">
+
+            <label class="control-label col-md-2" for="StuLoginPwd">密码</label>
+            <div class="col-md-10">
+                <input class="form-control" data-val="true" data-val-required="密码是必填项" id="StuLoginPwd" name="StuLoginPwd" type="password" />
+                @Html.ValidationMessage("StuLoginPwd")
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=" 登录 " class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+@section scripts{
+    <script type="text/javascript">   
+        function Check()
+        {
+            $.ajax({
+                url:"/AjaxLogin/CheckLoginName",
+                type:"POST",
+                async: true,//是否异步请求
+                cache: true,//是否缓存
+                contentType: "application/x-www-form-urlencoded",//发送信息至服务器时内容编码类型
+                beforeSend: function (ahr) { //发送请求前响应的函数
+                },
+                complete: function (ahr, content) { //请求完成响应之后处理的函数
+                },          
+                data: {//携带的参数
+                    "LoginName": $("#StuLoginName").val()
+                },
+                dataType: "text",//返回的类型
+                //dataFilter: function (data, type) {// 返回的原始数据的进行预处理的函数。提供 data 和 type 两个参数：data 是 Ajax 返回的原始数据，type 是调用 jQuery.ajax 时提供的 dataType 参数。函数返回的值将由 jQuery 进一步处理。
+
+                //},
+                success: function (data) {//请求成功的时候
+                    console.log(data);
+                    if (data == "true") {
+                        $("#valitaLoginName").html("<font color='green'>用户存在，可登录</font>");
+                    } else {
+                        $("#valitaLoginName").html("<font color='red'>用户不存在，请先注册</font>");
+                    }
+                },
+                error: function (xhr,em,TorThrow) { //请求失败的时候  XMLHttpRequest 对象、错误信息、（可选）捕获的异常对象。
+                      $("#valitaLoginName").html("<font color='red'>请求出现异常，很抱歉！！</font>");
+                }
+               
+
+
+            });
+
+        }
+    </script>
+    
+    }

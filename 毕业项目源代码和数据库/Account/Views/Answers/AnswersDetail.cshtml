@@ -1,0 +1,238 @@
+﻿@using Account.Models
+@{
+    ViewBag.Title = "AnswersDetail";
+    Layout = "~/Views/Shared/_LayoutEmax.cshtml";
+    Student stu = Session["user"] as Student;
+    int topnum = 1;
+    int num = 1;
+    string topicFlag = "topic";
+    string flag = "flag";
+}
+@model Answer
+<style>
+    * {
+        margin: 0px;
+        padding: 0px;
+        list-style-type: none;
+    }
+
+    .showFlag {
+        line-height: 40px;
+    }
+
+    .NotAnswerFlag {
+        border: 1px solid #000000;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+    }
+
+    .AnsweredFlag {
+        color: white;
+        background-color: #139ee5;
+        width: 15px;
+        height: 15px;
+        display: inline-block;
+    }
+    /*.timer {
+        width: 100px;
+        height:20px;
+        position:fixed;
+         right: 20%;
+        top: 50%;
+        border: 2px solid gray;
+        color:red;
+    }*/
+    .flex {
+        position: fixed;
+        border: 1px solid gray;
+        right: 20%;
+        top: 50%;
+        opacity: 0.8;
+        width: 210px;
+        border-radius: 5px;
+        background-color: #d7d6d6;
+    }
+
+        .flex ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+
+            .flex ul li {
+                padding: 0px;
+            }
+
+                .flex ul li a {
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 3px;
+                    border: 1px solid #000000;
+                    margin: 2px;
+                    text-align: center;
+                    line-height: 40px;
+                    display: block;
+                }
+
+    .NotAnswer {
+        background-color: #ffffff;
+        border: 1px solid #000000;
+    }
+
+    .Answered {
+        color: white;
+        background-color: #139ee5;
+    }
+
+    .submit {
+        margin: 5px auto;
+        border-radius: 5px;
+        text-align: center;
+        display: block;
+        width: 50px;
+        height: 30px;
+        line-height: 30px;
+        padding: 3px 5px;
+        background-color: #f53917;
+        color: white;
+    }
+
+        .submit:hover {
+            background-color: red;
+            color: white;
+        }
+</style>
+
+
+<h2>在线考试</h2>
+<table>
+    <tr>
+        <td>
+            <h4>试卷描述</h4><hr />
+            试卷名称: @Model.Paper.PaperName <br />
+            试卷介绍: @Model.Paper.PaperExplain<br />
+            试卷时长: @Model.Paper.PaperTime (分钟)<br />
+        </td>
+        <td>
+            <h4>考生信息</h4><hr />
+            学生姓名: @stu.StuName <br />
+            学生班级: @stu.StuGrade<br />
+        </td>
+    </tr>
+</table>
+
+
+<fieldset>
+    <legend>答题区</legend>
+    <ul style="list-style:inside;">
+        @{
+            foreach (var item in Model.Paper.Topic.OrderBy(p => p.TopicSort))
+            {
+                <li style="padding:20px;">
+                    <span>第 @topnum  题<a name="@flag@item.TopicID"></a></span>
+                    <span style="font-weight:bold"> @item.TopicExplain </span> ( @item.TopicScore 分)
+                    @{
+                        if (item.TopicType == 1)
+                        {
+                            <ul style="padding-left:30px;">
+                                <li><input name="@topicFlag@item.TopicID" type="radio" value="A" nameFlag="checkState" /> A.@item.TopicA </li>
+                                <li><input name="@topicFlag@item.TopicID" type="radio" value="B" nameFlag="checkState" />B. @item.TopicB</li>
+                                <li><input name="@topicFlag@item.TopicID" type="radio" value="C" nameFlag="checkState" />C. @item.TopicC</li>
+                                <li><input name="@topicFlag@item.TopicID" type="radio" value="D" nameFlag="checkState" />D. @item.TopicD</li>
+                            </ul>
+                        }
+                        else if (item.TopicType == 2)
+                        {
+                            <ul style="padding-left:30px;">
+                                <li><input name="@topicFlag@item.TopicID" type="radio" value="0" nameFlag="checkState" />正确</li>
+                                <li><input name="@topicFlag@item.TopicID" type="radio" value="1" nameFlag="checkState" />错误</li>
+                            </ul>
+                        }
+                        else
+                        {
+                            <ul style="padding-left:30px;">
+                                <li><textarea name="@topicFlag@item.TopicID" cols="100" rows="5" nameFlag="checkState" style="width:500px;height:50px"></textarea></li>
+                            </ul>
+                        }
+                    }
+                </li>
+                topnum++;
+            }
+        }
+    </ul>
+</fieldset>
+
+<div class="flex">
+    <div class="showFlag">
+        <span>已作答<span class="AnsweredFlag"></span></span><span>未作答<span class="NotAnswerFlag"></span></span>
+    </div>
+    <hr />
+    <div class="timer">
+        <strong id="minute" style="font-size:20px">0分</strong>
+        <strong id="second">0秒</strong>
+    </div>
+    <ul>
+        @foreach (var topic in Model.Paper.Topic.OrderBy(p => p.TopicSort))
+        {
+            <li><a href="#@flag@topic.TopicID" id="@topic.TopicID">@num</a></li>
+            num++;
+        }
+
+    </ul>
+    <hr />
+    <div>
+        <a href="/Answers/SubmitPaper?AnswerID=@Model.AnswerID" class="submit" id="submits" onclick="return confirm('确定交卷吗？')">交卷</a><br />
+    </div>
+</div>
+
+@section scripts{
+    <script type="text/javascript">
+
+        $("[nameFlag='checkState']").change(function () {
+            var DetailAnswer = $(this).val();
+            //获取name属性
+            var nameValue = $(this).attr("name");
+            var topicid = nameValue.replace(/[^0-9]/ig, "");
+            $("#" + topicid).addClass("Answered");
+            $.post({
+                url: "/Answers/Index",
+                data: {
+                    DetailAnswer: DetailAnswer,
+                    topicid: topicid,
+                    aid: @Model.AnswerID
+                }
+            })
+        });
+
+   var intDiff = parseInt(@Model.Paper.PaperTime*60);//倒计时总秒数量 
+      
+    function timer(intDiff) { 
+    window.setInterval(function () { 
+        var minute = 0, 
+              second = 0;//时间默认值 
+        if (intDiff > 0) { 
+                minute = Math.floor(intDiff / 60); 
+                second = Math.floor(intDiff) - (minute * 60); } 
+        if (minute <= 9) minute = '0' + minute; 
+        if (second <= 9) second = '0' + second; 
+        $('#minute').html('<s></s>' + minute + '分'); 
+        $('#second').html('<s></s>' + second + '秒'); 
+        intDiff--;
+        if (intDiff <= 5) {
+            $('#minute').prop("style", "color:red");
+            $('#second').prop("style", "color:red");
+        }
+        if (intDiff <= 0) {
+            clearInterval(timer); //定时器清除；
+          //  $("#submits").click();
+            // history.back(-1);
+           window.location.href ="/Answers/SubmitPaper?AnswerID=@Model.AnswerID";
+       } 
+}, 1000); } 
+$(function () { 
+        timer(intDiff); 
+});
+    </script>
+}

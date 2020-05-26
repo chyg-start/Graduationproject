@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+@using Account.Models
+@using PagedList.Mvc
+@model PagedList.IPagedList<Account.Models.Menus>
+<div class="navbar-collapse">
+    <ul class=" breadcrumb">
+        <li><a href="Home/Index">主页</a></li>
+        <li class="active">菜单管理</li>
+    </ul>
+</div>
+<h2>菜单管理</h2>
+<div class="row">
+    <div class="col-lg-6">
+        <a href="/Menus/Add" class="btn btn-primary">新增菜单</a>
+    </div>
+    <div class="col-lg-6">
+        <form action="/Menus/Index" method="post">
+            @if (ViewBag.i != null)
+            {
+            <label>菜单模糊查询:</label> 
+            <input type="text" id="Name" name="Name" placeholder="菜单名" value="@ViewBag.i" />
+            }
+            else
+            {
+                <input type="text" id="Name" name="Name" placeholder="菜单名" value="" />
+            }
+
+            <input id="Submit1" type="submit" value="查询" class="btn btn-success" />
+        </form>
+    </div>
+ </div>
+<table class="table table-bordered table-hover table-striped">
+    <thead>
+        <tr>
+            <th>编号</th>
+            <th>名称</th>
+            <th>地址</th>
+            <th>备注</th>
+            <th>上级菜单ID</th>
+            <th>拥有的用户</th>
+            <th>修改</th>
+            <th>删除</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.Name</td>
+            <td>@item.Url</td>
+            <td>@item.Remark</td>
+            <td>@item.Pid</td>
+            <td>
+                @foreach (var items in item.R_Role_Menus)
+                {
+                    foreach (var itemss in items.Roles.R_User_Roles)
+                    {
+                        @itemss.UserInfos.Name<br />
+                    }
+                }
+            </td>
+            <td><a href="/Menus/Add?ID=@item.ID">修改</a></td>
+            <td><a href="/Menus/Delete?ID=@item.ID"  onclick="return confirm('您确认要删除 @item.Name 的这个菜单信息吗？')">删除</a></td>
+        </tr>
+        }
+    </tbody>
+</table>
+<div>
+    每页 @Model.PageSize 条记录，共 @Model.PageCount 页，当前第 @Model.PageNumber 页
+    @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+</div>

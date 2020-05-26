@@ -1,0 +1,33 @@
+﻿
+@{
+    ViewBag.Title = "LoginStudent";
+    Layout = "~/Views/Shared/_LayoutEmax.cshtml";
+}
+
+<h2>学生登录</h2>
+<form action="/Logins/LoginStudent" method="post">
+    <input name="__RequestVerificationToken" type="hidden" value="ql6QOqOuYfkLE8YOkXyNCJxRKzdXcgAwke6SRBaufrBGJtWJEokxvFI7D89n41f7FKKKfz2jh0mDrKs-viV6y2xE0k87KkqahHWEHKKgCDQ1" />    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuLoginName">登录名</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="登录名是必填项" id="StuLoginName" name="StuLoginName" type="text" value="" />
+                @Html.ValidationMessage("StuLoginName")
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuLoginPwd">密码</label>
+            <div class="col-md-10">
+                <input class="form-control" data-val="true" data-val-required="密码是必填项" id="StuLoginPwd" name="StuLoginPwd" type="password" />
+                @Html.ValidationMessage("StuLoginPwd")
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=" 登录 " class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+

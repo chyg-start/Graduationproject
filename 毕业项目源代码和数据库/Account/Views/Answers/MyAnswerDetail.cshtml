@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "MyAnswerDetail";
+    Layout = "~/Views/Shared/_LayoutEmax.cshtml";
+    List<Detail> details = ViewBag.Detaillist;
+}
+@using Account.Models
+@model Answer
+<h2>我的考试</h2>
+<table>
+    <tr>
+        <td>
+            <h4>试卷描述</h4><hr />
+            试卷名称: @Model.Paper.PaperName <br />
+            试卷介绍: @Model.Paper.PaperExplain<br />
+            试卷时长: @Model.Paper.PaperTime (分钟)<br />
+        </td>
+        <td>
+            <h4>考生信息</h4><hr />
+            学生姓名: @Model.Student.StuName <br />
+            学生班级: @Model.Student.StuGrade<br />
+            交卷时间： <br />
+        </td>
+    </tr>
+</table>
+@if (Model.AnswerState == 2)
+{
+    <fieldset>
+        <legend>试卷答题内容</legend>
+        <ul>
+            @foreach (var item in details)
+            {
+                <li>
+                    <span style="font-weight:bold"> @item.Topic.TopicExplain</span> ( 25 分)
+                    <ul style="padding-left:30px;">
+                        <li>
+                            <span style="color:blue;">学生的答案是：@item.DetailAnswer </span>
+                            @if (@item.DetailAnswer == @item.Topic.TopicAnswer)
+                            {
+                                <span style="color:green">✔</span>
+                            }
+                            else
+                            {
+                                <span style="color:red">✘</span>
+                            }
+                        </li>
+                        <li><span style="color:red;">正确答案是：@item.Topic.TopicAnswer</span></li>
+                    </ul>
+                </li>
+            }
+        </ul>
+        <div style="font-size:30px;color:red;padding:10px 50px">
+            <span> 分数：@Model.AnswerScore </span>
+        </div>
+    </fieldset>
+}
+else
+{
+    <fieldset>
+        <legend>试卷答题内容</legend>
+        <ul>
+            @foreach (var item in details)
+            {
+                <li>
+                    <span style="font-weight:bold"> @item.Topic.TopicExplain</span> ( 25 分)
+                    <ul style="padding-left:30px;">
+                        <li>A.@item.Topic.TopicA;</li>
+                        <li>B.@item.Topic.TopicB;</li>
+                        <li>C.@item.Topic.TopicC</li>
+                        <li>D.@item.Topic.TopicD</li>
+                        <li><span style="color:blue;">您的答案是：@item.DetailAnswer</span></li>
+                    </ul>
+                </li>
+            }
+        </ul>
+        <div style="font-size:30px;color:red;padding:10px 50px">
+            <a href="/Answers/BeginAnswer?PaperID=@Model.PaperID&amp;AnswerID=@Model.AnswerID">继续答题</a>
+        </div>
+    </fieldset>
+}
+
+
+

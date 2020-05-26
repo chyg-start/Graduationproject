@@ -1,0 +1,99 @@
+﻿@model Account.Models.Topic
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutEmax.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Topic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicExplain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicExplain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicScore)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicScore)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicType)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicType)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicA)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicA)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicB)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicB)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicC)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicC)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicD)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicD)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicSort)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicSort)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TopicAnswer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TopicAnswer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Paper.PaperName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Paper.PaperName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TopicID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

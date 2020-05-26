@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Account.Models.Paper>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutEmax.cshtml";
+}
+
+<h2>试卷信息</h2>
+
+<p>
+    @Html.ActionLink("添加试卷", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.PaperName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaperExplain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PaperTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaperName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaperExplain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PaperTime)
+        </td>
+        <td>
+            <a href="/Topics1/Create?PaperID=@item.PaperID">添加考题</a> |
+            @Html.ActionLink("编辑", "Edit", new { id = item.PaperID }) |
+            @Html.ActionLink("详情", "Details", new { id = item.PaperID }) |
+            @Html.ActionLink("删除", "Delete", new { id = item.PaperID })
+        </td>
+    </tr>
+}
+
+</table>

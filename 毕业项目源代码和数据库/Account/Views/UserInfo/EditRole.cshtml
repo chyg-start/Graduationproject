@@ -1,0 +1,42 @@
+﻿
+@{
+    ViewBag.Title = "EditRole";
+}
+@using Account.Models
+@model List<Account.Models.Roles>
+<div class="navbar-collapse">
+    <ul class=" breadcrumb">
+        <li><a href="Home/Index">主页</a></li>
+        <li><a href="Index">用户管理</a></li>
+        <li class="active">设置角色</li>
+    </ul>
+</div>
+
+<h2>正在为 @ViewBag.name 设置角色 </h2>
+@using (Html.BeginForm("EditRole", "UserInfo", FormMethod.Post))
+{
+    var chenke = false;
+    foreach (var item in Model)
+    {
+        foreach (var items in ViewBag.list)
+        {
+            if (item.ID == items.RoleID)
+            {
+                chenke = true;
+                break;
+            }
+            else
+            {
+                chenke = false;
+            }
+        }
+
+        <input id="Hidden1" type="hidden" name="UserID" value="@ViewBag.id" />
+        <input id="RoleID" type="checkbox" value="@item.ID" checked="@chenke" name="RoleID" />
+        @item.Name
+        <br />
+        <br />
+    }
+    <input id="Submit1" type="submit" value="保存" class="btn btn-primary" />
+}
+

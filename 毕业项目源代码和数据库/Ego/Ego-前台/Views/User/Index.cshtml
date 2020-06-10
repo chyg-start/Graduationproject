@@ -1,0 +1,90 @@
+﻿
+@{
+    ViewBag.Title = "用户中心";
+}
+
+    <div class="w1200">
+        <div class="position"><a href="#">首页</a> > <a href="#">会员中心</a> > <a href="#">个人资料</a></div>
+
+        <div class="m_d">
+            <div class="left">
+                <dl>
+                    <dt>个人中心</dt>
+                    <dd>
+                        <a href="#" class="on"><span class="iconfont icon-users"></span>个人资料</a>
+                        <a href="#"><span class="iconfont icon-youjian"></span>个人信息</a>
+                        <a href="#"><span class="iconfont icon-wodedingdan31"></span>修改密码</a>
+                        <a href="#"><span class="iconfont icon-fankui"></span>我的订单</a>
+                        <a href="#"><span class="iconfont icon-cart"></span>购物车</a>
+                        <a href="#"><span class="iconfont icon-dizhi"></span>管理收货地址</a>
+                        <a href="#"><span class="iconfont icon-shoucang"></span>我的收藏</a>
+                        <a href="#"><span class="iconfont icon-zuji"></span>我的足迹</a>
+                        <a href="#"><span class="iconfont icon-qian "></span>购买记录</a>
+                        <a href="#"><span class="iconfont icon-cart2"></span>会员积分</a>
+                    </dd>
+                   
+                </dl>
+                @*<dl>
+                    <dt class="dt02">排队管理</dt>
+                    <dd>
+                        <a href="#">参与排队</a>
+                        <a href="#">全国排队详情</a>
+                        <a href="#">23通道排队列表</a>
+                        <a href="#">12通道排队列表</a>
+                        <a href="#">6通道排队列表</a>
+                    </dd>
+                </dl>*@
+            </div>
+            <div class="right">
+                <dl class="dl01">
+                    <dt><img src="~/images/ico04.jpg" /></dt>
+                    <dd>
+                        <table width="725" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width="416" class="td01">尊敬的，<font>张三</font> 您好！<span>(普通会员)</span></td>
+                                <td width="44">余额：</td>
+                                <td width="122"><span>0.000元</span></td>
+                                <td width="56" align="right">可用：</td>
+                                <td width="87"><span>0.000元</span></td>
+                            </tr>
+                            <tr>
+                                <td>还没有上传头像？ 点击<a href="#">上传头像</a><a class="save" href="#">保存</a></td>
+                                <td>冻结：</td>
+                                <td><span>0.000元</span></td>
+                                <td align="right">已提现：</td>
+                                <td><span>0.000元</span></td>
+                            </tr>
+                        </table>
+                        <img src="~/images/face.jpg" />
+                    </dd>
+                </dl>
+                <dl class="dl02">
+                    <dt>
+                        <span>个人资料</span>
+                    </dt>
+                    <dd>
+                        <div class="item"><span><font>*</font>用户真实姓名：</span><input type="tex" class="txt" /></div>
+                        <div class="item"><span><font>*</font>用户身份证号码：</span><input type="tex" class="txt" /></div>
+                        <div class="item"><span><font>*</font>性别：</span><input type="radio" value="" name="sex" /> 男&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" value="" name="sex" /> 女</div>
+                        <div class="item">
+                            <span style="float:left"><font>*</font>开户行：</span>
+                            <div class="xlc">
+                                <input name="aaa" class="txt-xl li01" value="储蓄卡|213213" /><span>更换银行 V</span>
+                                <ul>
+                                    <li class="li01">储蓄卡|111111</li>
+                                    <li class="li02">储蓄卡|222222</li>
+                                    <li class="li03">储蓄卡|213213</li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="item"><span><font>*</font>开户人姓名：</span><input type="text" class="txt" /></div>
+                        <div class="item"><span><font>*</font>银行卡号：</span><input type="tex" class="txt" /></div>
+                        <div class="item"><span><font>*</font>电子邮箱：</span><input type="tex" class="txt" /> <em>请输入邮箱地址，邮箱将用于找回密码。</em></div>
+                        <div class="item"><span><font>*</font>联系地址：</span><select><option value="广东省">广东省</option></select><select><option value="深圳市">深圳市</option></select><input type="tex" class="txt" /></div>
+                        <div class="item"><input type="submit" class="sub" value="保存" /></div>
+                    </dd>
+                </dl>
+            </div>
+            <div class="clear"></div>
+        </div>

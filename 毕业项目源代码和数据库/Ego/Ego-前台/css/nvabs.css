@@ -1,0 +1,425 @@
+﻿.fixedBox {
+    width: 5px;
+    position: fixed;
+    background: #333;
+    height: 100%;
+    _position: absolute;
+    right: 0px;
+    bottom: 0px;
+    z-index: 22;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.Location_link {
+    margin: 10px 0px;
+    line-height: 28px;
+    font-family: "æ–°å®‹ä½“"
+}
+
+    .Location_link em {
+        display: block;
+        background: url(../images/indexhead_sprite.png) right -440px;
+        width: 28px;
+        height: 28px;
+        float: left;
+        margin-right: 5px;
+    }
+/* IE6æµè§ˆå™¨çš„ç‰¹æœ‰æ–¹æ³• -- ä¿®æ­£IE6æŒ¯åŠ¨bug */
+* html, * html body {
+    background-image: url(about:blank);
+    background-attachment: fixed;
+}
+
+* html .fixedBox {
+    position: absolute;
+    left: expression(eval(document.documentElement.scrollRight-8));
+    top: expression(eval(document.documentElement.scrollTop+200));
+}
+
+    .fixedBox ul.fixedBoxList {
+        margin-top: 120px;
+        padding: 10px 0px;
+        width: 45px;
+        position: relative;
+        right: 40px;
+        background: #333;
+    }
+
+        .fixedBox ul.fixedBoxList li.fixeBoxLi.fixeBoxLi {
+            width: 45px;
+            margin: 1px auto 0;
+            text-align: center;
+            position: relative;
+            padding: 10px 1px 1px 1px;
+            color: #FFF;
+        }
+
+        .fixedBox ul.fixedBoxList li.fixeBoxLi a {
+            color: #FFF
+        }
+
+        .fixedBox ul.fixedBoxList li.fixeBoxLi.cart_bd.hover,
+        .fixedBox ul.fixedBoxList li.fixeBoxLi.Service.hover {
+            background: #df115e;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .fixedBox ul.fixedBoxList li.fixeBoxLi.user.hover,
+        .fixedBox ul.fixedBoxList li.fixeBoxLi.BackToTop.hover,
+        .fixedBox ul.fixedBoxList li.fixeBoxLi.Home.hover {
+            width: 45px;
+            background: #df115e;
+            margin: 1px auto 0;
+            border: 0 none;
+            text-align: center;
+            position: relative;
+            padding: 10px 1px 1px 1px;
+        }
+
+        .fixedBox ul.fixedBoxList li.fixeBoxLi.Home a {
+            text-decoration: none;
+            display: block;
+            width: 40px;
+            color: #FFF
+        }
+
+        .fixedBox ul.fixedBoxList li p.good_cart {
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: #FF0000;
+            height: 15px;
+            line-height: 15px;
+            display: block;
+            font-size: 12px;
+            color: #ffffff;
+            font-weight: bold;
+            padding: 0 4px;
+            overflow: hidden;
+        }
+
+.fixeBoxLi .fixeBoxSpan {
+    width: 40px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.fixeBoxLi.cart_bd .fixeBoxSpan {
+    font-size: 28px
+}
+
+.fixeBoxLi.code .fixeBoxSpan {
+    font-size: 28px
+}
+
+.fixeBoxLi.Service.startWork .fixeBoxSpan {
+    font-size: 30px
+}
+
+.fixeBoxLi.Service.Commuting .fixeBoxSpan {
+    font-size: 30px
+}
+
+.fixeBoxLi.BackToTop .fixeBoxSpan {
+    font-size: 30px
+}
+
+.fixeBoxLi.Home .fixeBoxSpan {
+    font-size: 30px
+}
+
+.fixeBoxLi.user .fixeBoxSpan {
+    font-size: 30px
+}
+
+.fixeBoxLi.erm.fixeBoxSpan {
+    font-size: 30px
+}
+
+.fixeBoxLi.user .fixeBoxSpan.hover {
+    color: #fff
+}
+
+.fixeBoxLi.cart_bd .fixeBoxSpan.hover {
+    color: #fff
+}
+
+.fixeBoxLi.code .fixeBoxSpan.hover {
+    color: #fff
+}
+
+.fixeBoxLi.Service.startWork .fixeBoxSpan.hover {
+    color: #fff
+}
+
+.fixeBoxLi.Service.Commuting .fixeBoxSpan.hover {
+    color: #fff
+}
+
+.fixeBoxLi.BackToTop .fixeBoxSpan.hover {
+    color: #fff
+}
+
+.fixeBoxLi.Home .fixeBoxSpan.hover {
+    color: #fff
+}
+
+.fixedBox ul.fixedBoxList li.fixeBoxLi strong {
+    display: block;
+    padding: 0px 5px;
+    text-align: center;
+    line-height: 22px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.fixedBox ul.fixedBoxList li.hover strong {
+    color: #fff;
+}
+
+.fixedBox ul.fixedBoxList li.cart_bd .cartBox {
+    position: absolute;
+    left: -282px;
+    top: -1px;
+    z-index: 9999;
+    width: 280px;
+    background: #FFFFFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    display: none;
+    border: 1px solid #d6d6d6;
+}
+
+.fixedBox ul.fixedBoxList li.code .cartBox {
+    position: absolute;
+    left: -202px;
+    top: -1px;
+    z-index: 9999;
+    width: 200px;
+    height: 200px;
+    background: #FFFFFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    display: none;
+}
+
+.fixedBox ul.fixedBoxList li.code.hover .bjfff {
+    width: 10px;
+    height: 62px;
+    background: #fff;
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+.fixedBox ul.fixedBoxList li.cart_bd.hover .cartBox {
+    display: block;
+}
+
+.fixedBox ul.fixedBoxList li.hover .bjfff {
+    width: 10px;
+    height: 83px;
+    background: #fff;
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+.fixedBox ul.fixedBoxList li.hover .bjfffs {
+    width: 10px;
+    height: 61px;
+    background: #fff;
+    position: absolute;
+    right: 0px;
+    top: 0;
+}
+
+.fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxList {
+    height: 296px;
+    overflow-y: auto;
+    position: relative;
+    z-index: 1000000;
+}
+
+.fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxC ul {
+    width: 256px;
+    margin: 0 auto;
+}
+
+    .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxC ul li {
+        height: 62px;
+        border-bottom: 1px solid #dcdfe4;
+        padding-top: 11px;
+    }
+
+        .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxC ul li .p-img {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #dcdfe4;
+            float: left;
+            overflow: hidden;
+        }
+
+            .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxC ul li .p-img img {
+                width: 48px;
+                height: 48px;
+            }
+
+        .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxC ul li .p-name {
+            width: 105px;
+            height: 38px;
+            line-height: 19px;
+            overflow: hidden;
+            float: left;
+            text-align: left;
+            padding-left: 8px;
+        }
+
+            .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxC ul li .p-name a {
+                color: #666666;
+            }
+
+        .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxC ul li .p-detail {
+            width: 72px;
+            float: right;
+            text-align: left;
+        }
+
+            .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxC ul li .p-detail span.p-price {
+                display: block;
+            }
+
+                .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxC ul li .p-detail span.p-price strong {
+                    color: red;
+                    font-weight: normal;
+                }
+
+            .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxC ul li .p-detail a.delete {
+                color: #999999;
+            }
+
+.fixedBox ul.fixedBoxList li.cart_bd .cartBox .message {
+    background: url(../images/settleup-nogoods.png) no-repeat 15px center;
+    height: 92px;
+    line-height: 92px;
+    padding-left: 80px;
+}
+
+.fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxFoot {
+    height: 48px;
+    line-height: 48px;
+    text-align: left;
+    width: 256px;
+    margin: 0 auto;
+}
+
+    .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxFoot span {
+        float: left;
+        color: #999999;
+        line-height: 48px;
+    }
+
+    .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxFoot em {
+        float: left;
+        line-height: 48px;
+    }
+
+    .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxFoot strong {
+        float: left;
+        line-height: 48px;
+        font-size: 12px;
+        font-weight: bold;
+        color: red;
+    }
+
+    .fixedBox ul.fixedBoxList li.cart_bd .cartBox .cartBoxFoot a#btn-payforgoods {
+        margin-top: 11px;
+        float: right;
+        cursor: pointer;
+        width: 80px;
+        height: 24px;
+        line-height: 24px;
+        text-align: center;
+        border: 1px solid #e46d1d;
+        background: #F63;
+        color: #ffffff;
+        box-shadow: 1px 1px 0px #f8ccb0 inset,-1px -1px 0px #f8ccb0 inset;
+        background-image: -moz-linear-gradient(top, #ffac75, #FF822F);
+        background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffac75), color-stop(1, #FF822F));
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffac75', endColorstr='#FF822F', GradientType='0');
+        border-radius: 2px;
+        -moz-border-radius: 2px;
+    }
+
+.fixedBox ul.fixedBoxList li.Service .ServiceBox {
+    width: 182px;
+    position: absolute;
+    left: -184px;
+    top: -1px;
+    z-index: 9999;
+    background: #FFFFFF;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    display: none;
+    border: 1px solid #d6d6d6;
+}
+
+.fixedBox ul.fixedBoxList li.Service.hover .ServiceBox {
+    display: block;
+}
+
+.fixedBox ul.fixedBoxList li.Service .ServiceBox dl {
+    height: 85px;
+    width: 162px;
+    margin: 0 auto;
+    padding-top: 10px;
+    border-bottom: 1px solid #d6d6d6;
+}
+
+    .fixedBox ul.fixedBoxList li.Service .ServiceBox dl dt {
+        float: left;
+        width: 71px;
+        height: 71px;
+        padding: 1px;
+        border: 1px solid #e1e2e3;
+    }
+
+    .fixedBox ul.fixedBoxList li.Service .ServiceBox dl dd {
+        width: 80px;
+        float: right;
+        text-align: left;
+    }
+
+        .fixedBox ul.fixedBoxList li.Service .ServiceBox dl dd strong {
+            height: 20px;
+            line-height: 20px;
+            font-weight: bold;
+            color: #333333;
+        }
+
+        .fixedBox ul.fixedBoxList li.Service .ServiceBox dl dd p.p1 {
+            height: 18px;
+            line-height: 18px;
+            overflow: hidden;
+            color: #666666;
+        }
+
+        .fixedBox ul.fixedBoxList li.Service .ServiceBox dl dd p.p2 {
+            height: 24px;
+            padding-top: 10px;
+        }
+
+            .fixedBox ul.fixedBoxList li.Service .ServiceBox dl dd p.p2 a {
+                cursor: pointer;
+                display: block;
+                width: 70px;
+                height: 22px;
+                line-height: 22px;
+                text-align: center;
+                border: 1px solid #d8d8d8;
+                background: #f4f4f4;
+                color: #333333;
+                background-image: -moz-linear-gradient(top, #ffffff, #f2f2f2);
+                background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #ffffff), color-stop(1, #f2f2f2));
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#f2f2f2', GradientType='0');
+            }

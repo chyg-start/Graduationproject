@@ -1,0 +1,77 @@
+﻿.order-md {
+    border: 1px solid #E0E0E0;
+}
+
+    .order-md .md-tit {
+        height: 44px;
+        background: #F7F7F7;
+        border-bottom: 1px solid #e0e0e0;
+    }
+
+        .order-md .md-tit h3 {
+            font-weight: normal;
+            line-height: 44px;
+            padding-left: 10px;
+            font-size: 14px;
+            color: #000;
+        }
+
+    .order-md .md-hd {
+        margin: 10px 10px 0;
+    }
+
+        .order-md .md-hd p {
+            display: inline-block;
+            line-height: 30px;
+            font-size: 13px;
+            color: #3B3B3B;
+        }
+
+            .order-md .md-hd p input {
+                position: relative;
+                top: 2px;
+                margin-right: 10px;
+            }
+
+        .order-md .md-hd .md-p1 {
+            width: 145px;
+        }
+
+        .order-md .md-hd .md-p2 {
+            width: 310px;
+        }
+
+        .order-md .md-hd .md-p3 {
+            width: 140px;
+        }
+
+        .order-md .md-hd .md-p4 {
+            width: 133px;
+        }
+
+        .order-md .md-hd .md-p5 {
+            width: 140px;
+        }
+
+    .order-md .md-info .dai {
+        line-height: 35px;
+        padding: 0 10px;
+    }
+
+    .order-md .md-info input {
+        position: relative;
+        top: 2px;
+        margin-right: 10px;
+    }
+
+    .order-md .md-info span {
+        font-size: 13px;
+        color: #3B3B3B;
+    }
+
+    .order-md .md-info .dai-con {
+        padding: 10px 0;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #e0e0e0;
+        border-top: 1px solid #e0e0e0;
+    }

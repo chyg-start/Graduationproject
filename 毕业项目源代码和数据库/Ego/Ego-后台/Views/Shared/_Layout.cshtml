@@ -1,0 +1,155 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <title>网站后台管理界面1</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <style type="text/css">
+        /*媒体查询，小屏幕（平板，大于等于768px）*/
+        @@media (min-width:768px) {
+
+            #leftbar {
+                width: 240px;
+                margin: 55px 0px 0px 0px;
+                position: absolute;
+                /*z-index:1;*/
+                height: 500px;
+                /*background:#B9DEF0;*/
+            }
+
+            .page-right {
+                background: #ddd;
+                margin: -5px 0px 0px 245px;
+            }
+        }
+
+        /* */
+
+        .left-dh {
+            margin: 10px 0px;
+        }
+
+        @@media (max-width:768px) {
+
+            body {
+                background: #777;
+            }
+        }
+       
+    </style>
+
+</head>
+
+<body>
+
+    <!-- .navbar-static-top 去掉了由 .navbar-default 设置的左、右和顶部的边框，让它看起来更适合放在页面的头部。-->
+
+
+    <nav class="navbar navbar-default navbar-static-top">
+
+        <div class="navbar-header">
+
+            <a href="#" class="navbar-brand">后台管理</a>
+
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#login">
+                <span class="icon-bar">1</span>
+
+                <span class="icon-bar">2</span>
+
+                <span class="icon-bar">3</span>
+
+            </button>
+
+            <button class="navbar-toggle" data-toggle="collapse" data-target="#leftbar">
+
+                <span>设置</span>
+
+            </button>
+
+        </div>
+
+        <ul class="nav navbar-nav navbar-right navbar-collapse collapse" id="login" style="margin:0px 20px 0px 0px;">
+
+            <li><a href="#"><span class="badge">登陆</span></a></li>
+
+            <li><a href="#">注销</a></li>
+
+            <li><a href="#">注册</a></li>
+
+        </ul>
+
+        <!--侧边栏 -->
+        <div class="navbar-collapse collapse" id="leftbar">
+            <ul class="nav" id="mz">
+                <li class="panel panel-default">
+                    <a href="#user" data-toggle="collapse" data-parent="#mz">用户管理<span class="glyphicon glyphicon-chevron-right pull-right"></span></a>
+                    <ul class="panel-collapse collapse nav" id="user">
+                        <li><a href="/Home/About">用户信息</a></li>
+
+                        <li><a href="#">其他活动</a></li>
+
+                        <li><a href="#">日志信息</a></li>                 
+
+                    </ul>
+
+                </li>
+
+                <li class="panel panel-default">
+                    <a href="#pro" data-toggle="collapse" data-parent="#mz">商品管理<span class="glyphicon glyphicon-chevron-right pull-right"></span></a>
+                    <ul class="panel-collapse collapse nav" id="pro">
+                        <li><a href="#">商品分类</a></li>
+
+                        <li><a href="#">商品信息</a></li>
+
+                        
+
+                    </ul>
+
+                </li>
+
+                <li class="panel panel-default">
+                    <a href="#sys" data-toggle="collapse" data-parent="#mz">系统功能<span class="glyphicon glyphicon-chevron-right pull-right"></span></a>
+                    <ul class="panel-collapse collapse nav" id="sys">
+                        <li><a href="#">系统信息</a></li>
+
+                        <li><a href="#">修改密码</a></li>
+
+                        <li><a href="/Home/About">关于</a></li>
+
+                        <li><a href="#">版权</a></li>
+
+                    </ul>
+
+                </li>
+
+                <li class="panel panel-default">
+
+                    <a href="#lanmu" data-toggle="collapse" data-parent="#mz">栏目功能<span class="glyphicon glyphicon-chevron-right pull-right"></span></a>
+
+                    <ul class="panel-collapse collapse nav" id="lanmu">
+
+                        <li><a href="#">栏目管理</a></li>
+
+                        <li><a href="#">栏目修改</a></li>
+
+                        <li><a href="#">退出</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--右边主要区域 -->
+
+    <div class="page-right">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+F:\毕业项目\Ego\EgoDAL\bin\Debug\EgoDAL.dll
+F:\毕业项目\Ego\EgoDAL\bin\Debug\EgoDAL.pdb
+F:\毕业项目\Ego\EgoDAL\bin\Debug\EgoModels.dll
+F:\毕业项目\Ego\EgoDAL\bin\Debug\EgoModels.pdb
+F:\毕业项目\Ego\EgoDAL\obj\Debug\EgoDAL.csprojAssemblyReference.cache
+F:\毕业项目\Ego\EgoDAL\obj\Debug\EgoDAL.csproj.CoreCompileInputs.cache
+F:\毕业项目\Ego\EgoDAL\obj\Debug\EgoDAL.csproj.CopyComplete
+F:\毕业项目\Ego\EgoDAL\obj\Debug\EgoDAL.dll
+F:\毕业项目\Ego\EgoDAL\obj\Debug\EgoDAL.pdb
+E:\毕业项目\毕业项目源代码和数据库\Ego\EgoDAL\bin\Debug\EgoDAL.dll
+E:\毕业项目\毕业项目源代码和数据库\Ego\EgoDAL\bin\Debug\EgoDAL.pdb
+E:\毕业项目\毕业项目源代码和数据库\Ego\EgoDAL\bin\Debug\EgoModels.dll
+E:\毕业项目\毕业项目源代码和数据库\Ego\EgoDAL\bin\Debug\EgoModels.pdb
+E:\毕业项目\毕业项目源代码和数据库\Ego\EgoDAL\obj\Debug\EgoDAL.csprojAssemblyReference.cache
+E:\毕业项目\毕业项目源代码和数据库\Ego\EgoDAL\obj\Debug\EgoDAL.csproj.CopyComplete
+E:\毕业项目\毕业项目源代码和数据库\Ego\EgoDAL\obj\Debug\EgoDAL.dll
+E:\毕业项目\毕业项目源代码和数据库\Ego\EgoDAL\obj\Debug\EgoDAL.pdb

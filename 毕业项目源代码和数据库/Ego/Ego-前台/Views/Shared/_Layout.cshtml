@@ -1,0 +1,317 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/orther.css" rel="stylesheet" />
+    <link href="~/css/nvabs.css" rel="stylesheet" />
+    <link href="~/css/tables.css" rel="stylesheet" />
+    <link href="~/fonts/iconfont.css" rel="stylesheet" />
+    
+    @*// <link href="~/Content/bootstrap.min.css" rel="stylesheet" />*@
+    <script src="~/js/jquery-1.7.min.js"></script>
+    <script src="~/js/common.js"></script>
+    <script src="~/js/zhonglin.js"></script>
+    <script src="~/js/zhongling2.js"></script>
+</head>
+<body>
+    <body class="index">
+        <div class="top_ad"><div class="w1200"><a href="#" id="close"></a></div></div>
+
+        <div class="top">
+            <div class="w1200">
+                <div class="left">您好，欢迎光临易易城！<a href="#">[登录]</a> <a href="#">[注册]</a></div>
+                <div class="right"><a href="#">我的会员中心</a>|<a href="#">收藏夹</a>|<a href="#">服务中心</a>|<a href="#">在线客服</a>|<a href="#">购物车<b>0</b>件</a></div>
+                <div class="clear"></div>
+            </div>
+        </div>
+        @*悬浮广告*@
+        <div class="mod_qr">
+            <a href="#" class="mod_qr_bd"><img src="~/images/AD-p-3.jpg" /></a>
+            <a href="javascript:void(0);" id="close" class="fixed_qr_close">
+                <img src="~/images/home/ico06.png" />
+            </a>
+        </div>
+
+        <div class="head">
+            <div class="w1200">
+                <div class="logo">
+                    <a href="#"></a>
+                </div>
+                <div class="search">
+                    <form action="#" class="form">
+                        <input type="text" value="输入商品关键字" name="keyword" class="txt" onfocus="if(value=='输入商品关键字') {value=''}" onblur="if(value=='') {value='输入商品关键字'}" />
+                        <input type="submit" value="搜索" class="sub" />
+                    </form>
+                    <p><a href="#">iphone6s</a>|<a href="#">面膜</a>|<a href="#">婚庆床品</a>|<a href="#">运动鞋</a>|<a href="#">眼霜</a>|<a href="#">月饼</a>|<a href="#">智能手机</a>|<a href="#">连衣裙</a></p>
+                </div>
+                <div class="s_r">
+                    <dl>
+                        <dt><p>购物车<span>0</span></p></dt>
+                        <dd>客服电话：<b>400-0139-038</b></dd>
+                    </dl>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <div class="menu">
+            <div class="w1200">
+                <div class="item" id="nav">
+                    <a href="#" class="nav">全部商品分类</a>
+                    <div class="nav_son">
+                        <ul>
+                            <li class="li01"><a href="#">功能产品</a></li>
+                            <li class="li02"><a href="#">服装箱包</a></li>
+                            <li class="li03"><a href="#">美妆护肤</a></li>
+                            <li class="li04"><a href="#">珠宝饰品</a></li>
+                            <li class="li05"><a href="#">数码家电</a></li>
+                            <li class="li06"><a href="#">食品茶酒</a></li>
+                            <li class="li07"><a href="#">运动体育</a></li>
+                            <li class="li08"><a href="#">家居家纺</a></li>
+                            <li class="li09"><a href="#">生活服务</a></li>
+                            <li class="li10"><a href="#">其他</a></li>
+                        </ul>
+                        <div class="hover">
+                            <div id="son">
+                                <dl>
+                                    <dt>手机</dt>
+                                    <dd><a href="#">全部手机</a><a href="#" class="red">小米</a><a href="#">iPhone</a><a href="#">华为</a><a href="#">三星</a><a href="#">魅族</a><a href="#">PPTV</a><a href="#">一加</a><a href="#">OPPO</a><a href="#">vivo</a><a href="#">联想</a><a href="#">美图</a><a href="#">乐视</a><a href="#">奇酷</a><a href="#">大神</a><a href="#">努比亚</a><a href="#">锤子</a><a href="#">HTC</a><a href="#">诺基亚</a></dd>
+                                    <div class="clear"></div>
+                                </dl>
+                                <dl>
+                                    <dt>手机配件</dt>
+                                    <dd><a href="#">全部手机</a><a href="#" class="red">小米</a><a href="#">iPhone</a><a href="#">华为</a><a href="#">三星</a><a href="#">魅族</a><a href="#">PPTV</a><a href="#">一加</a><a href="#">OPPO</a><a href="#">vivo</a><a href="#">联想</a><a href="#">美图</a><a href="#">乐视</a><a href="#">奇酷</a><a href="#">大神</a><a href="#">努比亚</a><a href="#">锤子</a><a href="#">HTC</a><a href="#">诺基亚</a></dd>
+                                    <div class="clear"></div>
+                                </dl>
+                                <dl>
+                                    <dt>摄像摄影</dt>
+                                    <dd><a href="#">全部手机</a><a href="#" class="red">小米</a><a href="#">iPhone</a><a href="#">华为</a><a href="#">三星</a><a href="#">魅族</a><a href="#">PPTV</a><a href="#">一加</a><a href="#">OPPO</a><a href="#">vivo</a><a href="#">联想</a><a href="#">美图</a><a href="#">乐视</a><a href="#">奇酷</a><a href="#">大神</a><a href="#">努比亚</a><a href="#">锤子</a><a href="#">HTC</a><a href="#">诺基亚</a></dd>
+                                    <div class="clear"></div>
+                                </dl>
+                                <dl>
+                                    <dt>数码配件</dt>
+                                    <dd><a href="#">全部手机</a><a href="#" class="red">小米</a><a href="#">iPhone</a><a href="#">华为</a><a href="#">三星</a><a href="#">魅族</a><a href="#">PPTV</a><a href="#">一加</a><a href="#">OPPO</a><a href="#">vivo</a><a href="#">联想</a><a href="#">美图</a><a href="#">乐视</a><a href="#">奇酷</a><a href="#">大神</a><a href="#">努比亚</a><a href="#">锤子</a><a href="#">HTC</a><a href="#">诺基亚</a></dd>
+                                    <div class="clear"></div>
+                                </dl>
+                                <dl>
+                                    <dt>智能设备</dt>
+                                    <dd><a href="#">全部手机</a><a href="#" class="red">小米</a><a href="#">iPhone</a><a href="#">华为</a><a href="#">三星</a><a href="#">魅族</a><a href="#">PPTV</a><a href="#">一加</a><a href="#">OPPO</a><a href="#">vivo</a><a href="#">联想</a><a href="#">美图</a><a href="#">乐视</a><a href="#">奇酷</a><a href="#">大神</a><a href="#">努比亚</a><a href="#">锤子</a><a href="#">HTC</a><a href="#">诺基亚</a></dd>
+                                    <div class="clear"></div>
+                                </dl>
+                            </div>
+
+                            <div id="son">
+                                <dl>
+                                    <dt>手机</dt>
+                                    <dd><a href="#">全部手机</a><a href="#" class="red">小米</a><a href="#">iPhone</a><a href="#">华为</a><a href="#">三星</a><a href="#">魅族</a><a href="#">PPTV</a><a href="#">一加</a><a href="#">OPPO</a><a href="#">vivo</a><a href="#">联想</a><a href="#">美图</a><a href="#">乐视</a><a href="#">奇酷</a><a href="#">大神</a><a href="#">努比亚</a><a href="#">锤子</a><a href="#">HTC</a><a href="#">诺基亚</a></dd>
+                                    <div class="clear"></div>
+                                </dl>
+                            </div>
+
+                            <div id="son">
+                                <dl>
+                                    <dt>手机</dt>
+                                    <dd><a href="#">全部手机</a><a href="#" class="red">小米</a><a href="#">iPhone</a><a href="#">华为</a><a href="#">三星</a><a href="#">魅族</a><a href="#">PPTV</a><a href="#">一加</a><a href="#">OPPO</a><a href="#">vivo</a><a href="#">联想</a><a href="#">美图</a><a href="#">乐视</a><a href="#">奇酷</a><a href="#">大神</a><a href="#">努比亚</a><a href="#">锤子</a><a href="#">HTC</a><a href="#">诺基亚</a></dd>
+                                    <div class="clear"></div>
+                                </dl>
+                                <dl>
+                                    <dt>手机</dt>
+                                    <dd><a href="#">全部手机</a><a href="#" class="red">小米</a><a href="#">iPhone</a><a href="#">华为</a><a href="#">三星</a><a href="#">魅族</a><a href="#">PPTV</a><a href="#">一加</a><a href="#">OPPO</a><a href="#">vivo</a><a href="#">联想</a><a href="#">美图</a><a href="#">乐视</a><a href="#">奇酷</a><a href="#">大神</a><a href="#">努比亚</a><a href="#">锤子</a><a href="#">HTC</a><a href="#">诺基亚</a></dd>
+                                    <div class="clear"></div>
+                                </dl>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="item"><a href="#" class="home">商城首页</a></div>
+                <div class="item"><a href="#">易易特色</a></div>
+                <div class="item"><a href="#">热销产品</a></div>
+                <div class="item"><a href="#">新品上市</a></div>
+                <div class="item"><a href="#">精品推荐</a></div>
+                <div class="item"><a href="#">生活服务</a></div>
+            </div>
+        </div>
+
+
+        <div>
+
+            @RenderBody()
+        </div>
+
+
+        <!--footer-->
+        <div class="footer">
+            <div class="f_bz">
+                <div class="w1200">
+                    <dl class="dl01">
+                        <dt>正品保证</dt>
+                        <dd>正品护航  购物无忧</dd>
+                    </dl>
+                    <dl class="dl02">
+                        <dt>你消费 我买单</dt>
+                        <dd>返现购物商城</dd>
+                    </dl>
+                    <dl class="dl03">
+                        <dt>品类丰富</dt>
+                        <dd>品类齐全 轻松购物</dd>
+                    </dl>
+                    <dl class="dl04">
+                        <dt>特色服务体验</dt>
+                        <dd>为您呈现不一样的服务</dd>
+                    </dl>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="f_nav">
+                <div class="w1200">
+                    <dl>
+                        <dt>新手指南</dt>
+                        <dd>
+                            <a href="#">注册新用户</a>
+                            <a href="#">商品订购流程</a>
+                            <a href="#">会员注册协议</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>付款方式</dt>
+                        <dd>
+                            <a href="#">支付宝支付</a>
+                            <a href="#">网上银行支付</a>
+                            <a href="#">货到付款</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>常见问题</dt>
+                        <dd>
+                            <a href="#">订单状态</a>
+                            <a href="#">发票说明</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>售后服务</dt>
+                        <dd>
+                            <a href="#">退换货政策</a>
+                            <a href="#">退换货流程</a>
+                            <a href="#">退款说明</a>
+                            <a href="#">退换货申请</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>客服中心</dt>
+                        <dd>
+                            <a href="#">常见问题</a>
+                            <a href="#">联系客服</a>
+                            <a href="#">投诉与建议</a>
+                        </dd>
+                    </dl>
+                    <div class="ewm"><img src="~/images/home/ico35.png" /></div>
+                    <div class="ewm"><img src="~/images/home/ico38.png" /></div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="w1200">
+                <div class="bottom">
+                    <a href="#">关于我们</a>|<a href="#">帮助中心</a>|<a href="#">法律声明</a>|<a href="#">用户协议</a>|<a href="#">联系我们</a>|<a href="#">人才招聘</a>|<a href="#">站点地图</a>
+
+                    <p>网络文化经营许可证：粤网文[2015]0295-065号<br />© 2015 深圳易易城科技网络有限公司. 粤ICP备15042543号</p>
+                    <p class="p02"><img src="~/images/home/ico25.jpg" /><img src="~/images/home/ico26.jpg" /><img src="~/images/home/ico27.jpg" /><img src="~/images/home/ico36.jpg" /><img src="~/images/home/ico37.jpg" /></p>
+                </div>
+            </div>
+        </div>
+        <!--右侧菜单栏购物车样式-->
+        <div class="float">
+            <ul>
+                <li><a href="#" class="a01"></a></li>
+                <li><a href="#" class="a02"></a></li>
+                <li><a href="#" class="a03"></a></li>
+                <li><a href="#" class="a04"></a></li>
+            </ul>
+        </div>
+        @*<div class="fixedBox">
+            <ul class="fixedBoxList">
+                <li class="fixeBoxLi user"><a href="#"> <span class="fixeBoxSpan iconfont icon-yonghu"></span> <strong>用户</strong></a> </li>
+                <li class="fixeBoxLi cart_bd" style="display:block;" id="cartboxs">
+                    <p class="good_cart">0</p>
+                    <span class="fixeBoxSpan iconfont icon-cart"></span> <strong>购物车</strong>
+                    <div class="cartBox">
+                        <div class="bjfff"></div><div class="message">购物车内暂无商品，赶紧选购吧</div>
+                    </div>
+                </li>
+                <li class="fixeBoxLi Service ">
+                    <span class="fixeBoxSpan iconfont icon-service"></span> <strong>客服</strong>
+                    <div class="ServiceBox">
+                        <div class="bjfffs"></div>
+                        <dl onclick="javascript:;">
+                            <dt><img src="images/Service1.png"></dt>
+                            <dd>
+                                <strong>QQ客服1</strong>
+                                <p class="p1">9:00-22:00</p>
+                                <p class="p2"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=123456&amp;site=DGG三端同步&amp;menu=yes">点击交谈</a></p>
+                            </dd>
+                        </dl>
+                        <dl onclick="javascript:;">
+                            <dt><img src="images/Service1.png"></dt>
+                            <dd>
+                                <strong>QQ客服1</strong>
+                                <p class="p1">9:00-22:00</p>
+                                <p class="p2"><a href="http://wpa.qq.com/msgrd?v=3&amp;uin=123456&amp;site=DGG三端同步&amp;menu=yes">点击交谈</a></p>
+                            </dd>
+                        </dl>
+                    </div>
+                </li>
+                <li class="fixeBoxLi code cart_bd " style="display:block;" id="cartboxs">
+                    <span class="fixeBoxSpan iconfont icon-erweima"></span> <strong>微信</strong>
+                    <div class="cartBox">
+                        <div class="bjfff"></div>
+                        <div class="QR_code">
+                            <p><img src="images/erweim.jpg" width="150px" height="150px" style=" margin-top:10px;" /></p>
+                            <p>微信扫一扫，关注我们</p>
+                        </div>
+                    </div>
+                </li>
+
+                <li class="fixeBoxLi Home"> <a href="./"> <span class="fixeBoxSpan iconfont  icon-shoucang"></span> <strong>收藏</strong> </a> </li>
+                <li class="fixeBoxLi Home"> <a href="./"> <span class="fixeBoxSpan iconfont  icon-zuji"></span> <strong>足迹</strong> </a> </li>
+                <li class="fixeBoxLi Home"> <a href="./"> <span class="fixeBoxSpan iconfont  icon-fankui"></span> <strong>反馈</strong> </a> </li>
+                <li class="fixeBoxLi BackToTop"> <span class="fixeBoxSpan iconfont icon-top"></span> <strong>返回顶部</strong> </li>
+            </ul>
+        </div>*@
+
+
+
+        @RenderSection("scripts", required: false)
+        <script type="text/javascript">
+            $(document).ready(function (e) {
+
+                $('#slider li').eq(0).show();
+                var lenThumb = $('#slider li').length;
+                for (var i = 1; i <= lenThumb; i++) {
+                    $('#num').append('<span>' + i + '</span>');
+                }
+                $('#num span').eq(0).addClass('on');
+                var len = $('#num span').length;
+                var index = 0;
+
+                $('#num span').click(function () {
+                    index = $('#num span').index(this);
+                    picShow(index);
+                });
+                var playPic = setInterval(function () {
+                    picShow(index);
+                    index++;
+                    if (index == len) { index = 0 }
+                }, 3000);
+                function picShow(i) {
+                    $('#slider li').eq(i).stop(true, true).fadeIn().siblings().fadeOut();
+                    $('#num > span').eq(i).addClass('on').siblings().removeClass('on');
+                }
+
+            });
+        </script>
+    </body>
+</html>

@@ -168,10 +168,10 @@ Note nvarchar(50) null
 create table Advert(
 AdvertID  int primary key identity(1,1),
 UserID int foreign key references UserInfo(UserID),
-Stor int unique,
-Url nvarchar(50) null,
+Stor int null,
+Url nvarchar(100) null,
 Images nvarchar(50) not null,
-CreateTime date default(getDate()),
+CreateTime datetime ,
 Note nvarchar(50) null
 )
 create table Costs(
